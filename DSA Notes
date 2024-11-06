@@ -326,12 +326,3 @@ What is the runtime of the below code?
 Time Complexity : O(logN) because it divides the n
 ------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-Arrays:
-------
-
-- Array can store data of specified type
-- Elements of an array are located in a contiguous
-- Each element of an array has a unique index
-- The size of an array is predefined and cannot be modified
-

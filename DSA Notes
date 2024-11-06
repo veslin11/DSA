@@ -1,0 +1,337 @@
+Big O is used to describe the efficiency of alogorithm
+
+we have 3 type of case, Best case, worst case, average case
+			omega       BIG O      	hecta
+
+Below are runtime complexities
+
+* Big O(1) - it is a constant means for any no of input operation count or execution time will not change -  best case
+* Big O(n) - it is called linear time complexity, time complexity or operation depends on N - average case
+* Big O(n^2) - ex: 2 nested loop(n*n = O(n^2)) or 3 nested loop (n*n*n = O(n^3)) - worst case
+
+
+Non dominant terms - if we have nested loop with 2 forloop - time complexity is O(n^2)
+again with the above if we have another loop with 1 for loop - time complexity is O(n)
+so by combaining the above 2 is O(n^2 + n) 
+for example if the n is 100, the above result is O(10000 + 100) in this case 10000 is a dominant terms 
+so we can remove the non dominant terms like O(n^2)
+
+
+* Big O(log n) - logarthamtic complexity
+----------------------------------------
+
+if we have array like 1|2|3|4|5|6|7|8| if we want to access no 1 we have 1 operarion
+in case if we want to access 8 we need 8 operations
+
+by using divide and conquire techinque we can reduce the operations 
+for ex like the above sorted array we need to access 8 , in this case divide the array by 2 parts
+
+1|2|3|4       5|6|7|8| - we need to check the second part - 1st operations
+
+again need to split the array - 5|6     7|8|  -  we need to check the second part - 2nd operations
+
+
+again need to split the array 7  |   8   -  we need to check the second part - 3rd operations
+
+so we got the number. total no of operations is 3, equation looks like 2^3= 8  
+Note: (2 is the part which we split, 3 no of operations)
+
+we have to represent like log2^3 = 8
+
+In case if we have array size is 1048576,  equation like log2^1048576 = 20
+
+so above will be considered as more efficient time complexity
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Different terms of input - Add/Multipy
+---------------------------------------
+
+** Tricky Interview Questions **
+
+if we have below code
+
+void print(int a, int b) {
+for(int i=0;i<a;i++){
+	sysout(i)
+}
+
+for(int i=0;i<b;i++){
+	sysout(i)
+}
+}
+
+ADD - in this case we do not calculate like O(n) we should calculate like O(a) for first loop and O(b) for second loop so total O(a+b)
+
+
+
+if we have below code 
+
+void print(int a, int b) {
+for(int i=0;i<a;i++){
+	for(int j=0;j<b;j++)
+		sysout(i+ " "+j);
+}
+
+MULTIPLY In this case we should calculate like O(a) for first loop and O(b) for second loop so total O(a*b)
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+space complexity:
+-----------------
+
+it is used to calculate how much memory will use to run the algorithm
+
+O(n) example: recurse method - every recursive call will store in stack memory and those call waits for their returns 
+O(1) example: inside the for loop if we call a method, this will not store any memory in stack, because at each call the method gets completed. 
+	      so no need to store anything in memory
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+Rules
+-------
+
+Rule 1 Any assignment statements and if statements that are executed once regardless of the size of 
+       the problem O(1)
+Rule 2 A simple “for” loop from 0 to n ( with no internal loops) O(n)
+Rule 3 A nested loop of the same type takes quadratic time complexity O(n2)
+Rule 4 A loop, in which the controlling parameter is divided by two at each step O(log n)
+Rule 5 When dealing with multiple statements, just add them up
+
+
+Based on the above rules, 
+
+
+Public static void findBiggestNumber([] sampleArray) {
+ var biggestNumber = sampleArray[0];  ----------------------------------------- O(1)
+ for (index=1; sampleArray.length; index++) { --------------------------------- O(n)
+ if (sampleArray[index] > biggestNumber) { ------------------------------------ O(1)
+ biggestNumber = sampleArray[index]; ------------------------------------------ O(1)
+ }
+ }
+ System.out.println(biggestNumber); --------------------------------------------O(1)
+}
+
+
+total complexity(we have to eliminate the constants) => O(1) + O(n) + O(1) + O(1) + O(1) = O(n)
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+Interview Question 1
+- Create a function which calculates the sum and product of elements of array
+- Find the time complexity for created method
+
+
+public void calcSumProduct(int n) {
+		int sum = 0; ------------------------------- O(1)
+		int product = 0;---------------------------- O(1)
+		for(int i=1;i<=n; i++) {-------------------- O(n) 
+			sum+= i;---------------------------- O(1)
+			product+= i; ----------------------- O(1)
+		}
+	}
+
+total complexity => O(1) + O(1) + O(n) +O(1) +O(1) = O(n)
+
+
+Interview Question 2
+Create a function which prints to the console the pairs from given array.
+- Find the time complexity for created method.
+[1,3,4,5] 11, 13, 14, 15
+31, 33, 34, 35
+41, 43, 44, 45
+51, 53, 54, 55
+
+
+public static void calcSumProduct(int[] given) {
+		for(int i=0; i<given.length; i++) { ------------------------------ O(n)
+			for(int j=0; j<given.length; j++) { ---------------------- O(n)
+				System.out.print(given[i]+""+given[j]+ (j==given.length-1 ? "" : ", ")); ---- O(1)
+			}
+			System.out.println(); ---------------- O(1)
+		}
+	}
+
+
+total time complexity is => O(n) * O(n) + O(1) + O(1) = O(n^2)
+
+
+
+
+
+Interview Question 3 - What is the time complexity for this method?
+[1,3,4,5] 13, 14, 15
+34, 35
+45
+void printUnorderedPairs(int[] array) {
+ for (int i=0; i<array.length; i++) {  ----------------------  O(n)
+ for (int j=i+1; j<array.length; j++) { ---------------------- O(n)
+ System.out.println(array[i] + ", "+ array[j]); -------------- O(1)
+ }
+ }
+ }
+
+total time complexity is O(n) * O(n) + O(1) = O(n^2)
+
+
+
+
+
+Interview Question 4
+void printUnorderedPairs (int[] arrayA, int[] arrayB) {
+ for (int i=0; i < arrayA.length; i++) {  -------------------------- O(A)
+ for (int j=0; j < arrayB.length; j++) {  -------------------------- O(B)
+ if (arrayA[i] < arrayB[j]) {
+ System.out.println(arrayA[i] + "," + arrayB[j]);
+ }
+ }
+ }
+ }
+
+total time complexity => O(AB)
+
+
+
+Interview Question 5
+void printUnorderedPairs (int[] arrayA, int[] arrayB) {  
+ for (int i=0; i < arrayA.length; i++) {  -------------------------  O(A)
+ for (int j=0; j < arrayB.length; j++) {  -------------------------  O(B)
+ for (int k = 0; k<1000000; k++) {     ----------------------------  O(1)
+ System.out.println(arrayA[i] + "," + arrayB[j]); -----------------  O(1)
+ }
+ }
+ }
+ }
+Time Complexity : O(ab)
+b = arrayB.length;
+a = arrayA.length;
+What is the runtime of the below code?
+100,000 units of work is still constan
+
+
+
+Interview Question 6
+- Create a method which takes an array as a parameter and reverses it.
+- Find the runtime of the created method?
+
+
+
+public static void reverse(int[] array) {
+		int end = array.length-1; -        ---------------------  O(1)
+		int temp,start = 0;                ---------------------  O(1) 
+		while(start < end) {               ---------------------  O(n)
+			temp = array[start];       ---------------------  O(1)
+			array[start] = array[end];  ---------------------  O(1)
+			array[end] = temp;         ---------------------  O(1)  
+			end--;                     ---------------------  O(1)
+			start++;                   ---------------------  O(1)
+		}
+		
+	}
+
+
+time complexity is O(n)
+
+Interview Question 7
+Which of the following are equivalent to O(N)? Why?
+
+1. O(N + P) , where P < N/2 
+O(N) represents the time complexity of iterating through the array.
+P is a constant that represents the number of additional operations, but since ( P < \frac{N}{2} ), it is still proportional to ( N ).
+which means P is always less than half of N, so time complexity always consider dominant term
+so result is O(N)
+
+2. O(2N) -- constant can be removed, result will be O(N)
+3. O(N+logN) - we have 2 runtime here, O(n) - linear time, O(logN) - logarithmic time, still N is the dominant term, result will be O(N)
+4. O(N + NlogN) - here NlogN is the dominant term, logN always slowly increase, then if we multiply with N, it will always greater than N 
+so result will be O(NlogN)
+
+
+
+Interview Question 8
+
+What is the runtime of the below code?
+static int factorial(int n) {
+ if (n < 0) {  -----------------------  O(1)
+ return -1;    -----------------------  O(1)
+ } else if (n == 0) { -----------------------  O(1)
+ return 1;-----------------------  O(1)
+ } else {-----------------------  O(1)
+ return n * factorial(n-1); -------------------- 
+ }
+ }
+
+Base Cases:
+When ( n < 0 ), the function returns (-1). This operation takes constant time, ( O(1) ).
+When ( n == 0 ), the function returns ( 1 ). This also takes constant time, ( O(1) ).
+
+Recursive Case:
+For ( n > 0 ), the function calls itself with ( n-1 ): factorial(n-1).
+Each call to factorial(n-1) results in another call to factorial(n-2), and so on, until factorial(0) is reached.
+
+expression will be [T(N) = T(n-1) + O(1)] [T(N-1) = T(n-2) + O(1)] ..... [T(1) = T(0) + O(1)]
+
+This means that the time to compute factorial(n) is the time to compute factorial(n-1) plus a constant amount of work (the multiplication and the function call).
+
+Adding these up, we get: [ T(n) = T(0) + n \cdot O(1) ]
+
+Since ( T(0) ) is a constant, we can simplify this to: [ T(n) = O(n) ]
+
+
+
+
+Interview Question 9
+
+What is the runtime of the below code?
+
+void allFib(int n) {
+ for (i=0; i<n; i++) { ------------------------ O(n)
+ fib(i);
+ }
+ } 
+static int fib(int n) {
+ if (n<=0) {
+ return 0;
+ } else if (n==1) {
+ return 1;
+ } else {
+ return fib(n-1) + fib(n-2); -------------------- T(n) = T(n-1) + T(n-2) + O(1)
+ }
+ }
+
+Since fib(i) has a time complexity of O(2^n)
+
+equation O(2^0 + 2^1 + 2^2 ..... 2^n-1 )
+
+result after classified,O(2^n)
+
+
+
+Interview Question 10
+What is the runtime of the below code?
+ static int powersOf2(int n) {
+ if (n<1) {
+ return 0;
+ } else if (n==1) {
+ System.out.println(1);
+ return 1;
+ } else {
+ var prev = powersOf2(n/2);
+ var curr = prev*2;
+ System.out.println(curr);
+ return curr;
+ }
+}
+
+
+Time Complexity : O(logN) because it divides the n
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Arrays:
+------
+
+- Array can store data of specified type
+- Elements of an array are located in a contiguous
+- Each element of an array has a unique index
+- The size of an array is predefined and cannot be modified
+

@@ -1,0 +1,7 @@
+Arrays:
+------
+
+- Array can store data of specified type
+- Elements of an array are located in a contiguous
+- Each element of an array has a unique index
+- The size of an array is predefined and cannot be modified

@@ -5,3 +5,88 @@ Arrays:
 - Elements of an array are located in a contiguous
 - Each element of an array has a unique index
 - The size of an array is predefined and cannot be modified
+
+Types of array
+-------------
+* Single dimensional array - int[] a;
+* Multidimentional array
+   -> two dimensional array  - int[][] a;
+   -> three dimensional array - here we have depth in the structure consider cube - int[][][] a;
+   -> four dimensional array
+   -> n dimansional array
+
+Arrays in memory:
+-----------------
+datas are stored in ram
+
+1D array store in contiguous manner, so that it is easy to access faster
+--------
+example:
+if we have array like  |1|2|3|1|2|3|1|2|3|
+Inside ram it will stpre contiguous manner
+ _ _ _ _ _ _ _ _ _ _ _ _
+|                       |
+||1|2|3|1|2|3|1|2|3|    | 
+|_ _ _ _ _ _ _ _ _ _ _ _|
+
+
+2D Array stores in non contigious manner, it is store like below
+--------
+example
+if we have array like this
+row1 -> |1|2|3|
+row2 -> |4|5|6|
+row3 -> |7|8|9|
+
+IN ram, it will divide each row based on jvm and store it as 1D manner and java keep that reference of each row like this. 
+
+ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+|           |4|5|6|                     |
+||1|2|3|                                | 
+|_ _ _ _ _ _ _ _ _ _ _ _|7|8|9|_ _ _ _ _|
+
+
+3D Array is also store in non contiguous manner, it is rarely used in the industory.
+--------
+int[x][y][z]
+x- is the depth means x 2D array
+y- is the rows
+z- is the column
+example: int[][][] arr = new int[3][4][5]
+
+it will store like as 1D manner like 0depth 0row 0column, 0depth 0row 1column,  below
+
+
+arr --> [ref to 2D array 1, ref to 2D array 2, ref to 2D array 3]  ---- depth
+        |
+        V
+  2D Array 1 --> [ref to 1D array 1, ref to 1D array 2, ref to 1D array 3, ref to 1D array 4]  --- rows
+  2D Array 2 --> [ref to 1D array 1, ref to 1D array 2, ref to 1D array 3, ref to 1D array 4]
+  2D Array 3 --> [ref to 1D array 1, ref to 1D array 2, ref to 1D array 3, ref to 1D array 4]
+        |
+        V
+  1D Array 1 --> [int, int, int, int, int] ------ columns
+  1D Array 2 --> [int, int, int, int, int]
+  1D Array 3 --> [int, int, int, int, int]
+  1D Array 4 --> [int, int, int, int, int]
+
+
+Creation of array
+-----------------
+
+int[] a; -- declaration, IN memory it will not allocate any storage for this. it will just create a varibale for this
+a=new int[3]; -- instantiation, IN memory it will create 3 blocks for this array with default vale 0, and variable stores first index address
+a[0]=1; -- initialization, it will asaign the values
+
+public void arr() {
+  int[] arr; ------------------------- O(1)
+  arr=new int[3]; ------------------------- O(1)
+  arr[0] = 1; ------------------------- O(1)   }
+  arr[1] = 2; ------------------------- O(1)   }  ----------> O(n)
+  arr[2] = 3; ------------------------- O(1)   }
+  sysout(arr); ------------------------- O(1)
+
+String sarray[] = {"arr1","arr2"} ------------------ O(1) -- because we are just initializing the element
+}
+
+see the time complexitiy above

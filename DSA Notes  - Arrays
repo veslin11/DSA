@@ -30,7 +30,7 @@ Inside ram it will stpre contiguous manner
 |_ _ _ _ _ _ _ _ _ _ _ _|
 
 
-2D Array stores in non contigious manner, it is store like below
+2D Array stores in non contigious manner(but each row stores in contiguous manner), it is store like below
 --------
 example
 if we have array like this
@@ -46,7 +46,7 @@ IN ram, it will divide each row based on jvm and store it as 1D manner and java 
 |_ _ _ _ _ _ _ _ _ _ _ _|7|8|9|_ _ _ _ _|
 
 
-3D Array is also store in non contiguous manner, it is rarely used in the industory.
+3D Array is also store in non contiguous manner(but each row stored in contiguous manner), it is rarely used in the industory.
 --------
 int[x][y][z]
 x- is the depth means x 2D array
@@ -106,14 +106,44 @@ timecomplexity is O(n) and space complexity is O(1) because no extra elements ar
 
 Searching of an array:
 -----------------------
-
+these kind of search is also called as linear search
 public void searchArray(int value)
 {
-for(int i=0; i<arr.length; i++) {
-if(arr[i] == value) {
-sysout("value found in index:"+ i);
-return;
+for(int i=0; i<arr.length; i++) {  ----------------------------- O(n)
+if(arr[i] == value) { ------------------------------------------ O(1)
+sysout("value found in index:"+ i); ------------------------------------------ O(1)
+return; ------------------------------------------ O(1)
 }
 }
-sysout("value not found")
+sysout("value not found")  ------------------------------------------ O(1)
 }
+
+time complexity is O(n) and space complexity is O(1)
+
+
+Deleting value from array
+-------------------------
+
+In practial we cannot delete a value from an array, we can update the values as integer min value
+
+public void delete(int value)
+{
+int index = searchArray(value); --------------- O(n)
+arr[index]=Integer.MIN_VALUE; ------------------O(1)
+}
+INTEGER.MIN_VALUE is -2^31
+time complexity is O(n) and space complexity is O(1)
+
+OR
+
+we can delete based on the index as a parameter
+
+Time and space complexity of 1D Array
+-------------------------------------
+                               Time complexity       Space complexity
+creating an empty array         O(1)                  O(n)
+inserting a value               O(1)                  O(1)
+traversing an array             O(n)                  O(1)
+accessing an given cell         O(1)                  O(1)  
+searching in array              O(n)                  O(1)
+deleting a value based on index O(1)                  O(1)              

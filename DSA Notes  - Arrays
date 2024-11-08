@@ -175,4 +175,38 @@ public void twoDArray() {
 		
 	}
 
+Time complexity is O(mn) and space complexity is O(1)
 
+Insertion in 2D Array
+---------------------
+
+public void insertion2DArray(int row, int col, int value) {
+		try {
+			array[row][value] = value; ---------------------------- O(1)
+			System.out.println("Successfully inserted !!!"); ---------------------------- O(1)
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("indexs are not valid"); ---------------------------- O(1)
+		}
+	}
+Time complexity is O(1) and space complexity is O(1)
+
+
+Traversal in 2D Array
+---------------------
+
+public void traverseTwoDArray() {
+		for(int row=0;row<array.length; row++) { ----------------------------- O(m)
+			for(int col=0;col<array[0].length;col++) { ------------------- O(n)
+				System.out.print(array[row][col] + " "); ------------- O(1)
+			}
+			System.out.println(); ---------------------------------------- O(1)
+		}
+	}
+
+Time complexity is O(mn) and space complexity is O(1)
+
+
+Searchin in 2D array:
+---------------------
+
+we are using linear search

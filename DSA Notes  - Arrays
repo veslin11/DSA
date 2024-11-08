@@ -146,4 +146,33 @@ inserting a value               O(1)                  O(1)
 traversing an array             O(n)                  O(1)
 accessing an given cell         O(1)                  O(1)  
 searching in array              O(n)                  O(1)
-deleting a value based on index O(1)                  O(1)              
+deleting a value based on index O(1)                  O(1)
+
+-----------------------------------------------------------------------------------------------------------------------
+
+Creation of 2D Array
+---------------------
+
+int[row][column] 2dArray;
+
+public void twoDArray() {
+		//declaration
+		int[][] array; -------------------------------------- O(1)
+		//instantiation
+		array = new int[2][2];-------------------------------------- O(1)
+		//intialization
+		array[0][0] = 1;-------------------------------------- O(1)   }
+		array[0][1] = 1;-------------------------------------- O(1)   } -------------- O(mn)
+		array[1][0] = 1;-------------------------------------- O(1)   }
+		array[1][1] = 1;-------------------------------------- O(1)   }
+		
+		System.out.println(java.util.Arrays.deepToString(array)); -------------------------------------- O(1)
+		
+		//String array
+		
+		String[][] strarray = {{"A","B"}, {"C","D"}}; -------------------------------------- O(1)
+		System.out.println(java.util.Arrays.deepToString(strarray)); -------------------------------------- O(1)
+		
+	}
+
+

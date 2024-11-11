@@ -68,4 +68,80 @@ public int[] findHighestScores(int[] arrays) {
 		return best; ---------- O(1)
 	}
 
-time complexity is O(1) and space complexity is O(1)
+time complexity is O(n) and space complexity is O(1)
+
+
+Missing Number
+--------------
+Write Java function called findMissingNumberInArray that takes an integer array containing n-1 unique elements from a range of 1 to n, with one missing number, and returns the missing number.
+
+Example
+
+myArray = {1,2,3,4,6}
+findMissingNumberInArray(myArray, 6) // 5
+Hint:
+
+Use the formula (n * (n + 1)) / 2 which  calculates the sum of the first n natural numbers.
+
+
+public int findMissingNumberInArray(int[] arrays) {
+		if (arrays == null || (arrays != null && arrays.length == 0)) --------- O(1)
+			return 0;--------- O(1)
+		int n= arrays.length+1; --------- O(1),O(1)
+		int expectedOutCome = (n*(n+1))/2; --------- O(1),O(1)
+		int actualOutCome = 0; --------- O(1),O(1)
+		for(int value: arrays) --------- O(n)
+			actualOutCome+= value;--------- O(1),O(1)
+		
+		return expectedOutCome-actualOutCome; --------- O(1)
+	}
+
+time complexity is O(n) and space complexity is O(1)
+
+Duplicate Number
+---------------
+Write a function which takes integer array as a parameter and returns a new integer array with unique elements. (remove duplicates)
+
+Example
+
+removeDuplicates({1, 1, 2, 2, 3, 4, 5})
+Output : [1, 2, 3, 4, 5]
+
+
+public static int[] removeDuplicates(int[] arr) {
+		int[] uniqueArray = new int[arr.length]; ------------- O(1), O(n)
+		boolean status = true; ------------- O(1), O(1)
+		int count = 0;------------- O(1), O(1)
+		for (int i = 0; i < arr.length; i++) { ------------- O(n)
+			for (int k = 0; k < arr.length; k++) { ------------- O(n)
+				if (uniqueArray[k] == arr[i]) { ------------- O(1)
+					status = false; ------------- O(1), O(1)
+					break; ------------- O(1)
+				}
+			}
+			if (status) ------------- O(1)
+				uniqueArray[count++] = arr[i]; ------------- O(1), O(1)
+			status = true; ------------- O(1), O(1)
+
+		}
+
+		return Arrays.copyOf(uniqueArray, count); ------------- O(1), O(1)
+	}
+
+time complexity is O(n^2) and space complexity is O(n)
+
+Another Method for duplicate removal
+
+public static int[] removeDuplicates1(int[] arr) {
+		int[] uniqueArray = new int[arr.length]; -------------- O(1),O(n)
+		int count = 0;-------------- O(1),O(1)
+
+		uniqueArray[count++] = arr[0]; -------------- O(1),O(1)
+		for (int i = 1; i < arr.length; i++) { -------------- O(1)
+			if (arr[i] != arr[i - 1]) -------------- O(1)
+				uniqueArray[count++] = arr[i]; -------------- O(1),O(1)
+		}
+		return Arrays.copyOf(uniqueArray, count); -------------- O(1),O(1)
+	}
+
+time complexity is O(n) and space complexity is O(n)

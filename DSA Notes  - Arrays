@@ -210,3 +210,42 @@ Searchin in 2D array:
 ---------------------
 
 we are using linear search
+
+public void search(int value) {
+		for(int row=0;row<array.length; row++) {     -------------------- O(m)
+			for(int col=0;col<array[0].length;col++) { -------------- O(n)
+				if(value == array[row][col]) { ------------------ O(1)
+					System.out.println("value is found"); --- O(1)
+					return;
+				}
+				
+			}
+		}
+		System.out.println("value is not found"); ----------------------- O(1)
+	}
+
+Time complexity is O(mn) and space complexity is O(1)
+
+Delete in 2D Array
+------------------
+
+public void delete(int row, int col) {
+		try {
+			array[row][col] = Integer.MIN_VALUE; ----------------------- O(1)
+		} catch (ArrayIndexOutOfBoundsException e) { 
+			System.out.println("Index is not valid"); ------------------ O(1)
+		}
+	}
+
+Time complexity is O(1) and space complexity is O(1)
+
+Time and Space Complexity of 2D Array
+-------------------------------------
+
+Operation                        Time complexity     Space complexity
+Creating an empty array          O(1)                O(mn)
+Inserting a value in an array    O(1)                O(1)
+Traversing a given array         O(mn)               O(1)
+Accessing a given cell           O(1)                O(1)
+Searching a given value          O(mn)               O(1)
+Deleting a given value           O(1)                O(1)

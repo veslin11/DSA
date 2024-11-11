@@ -249,3 +249,62 @@ Traversing a given array         O(mn)               O(1)
 Accessing a given cell           O(1)                O(1)
 Searching a given value          O(mn)               O(1)
 Deleting a given value           O(1)                O(1)
+
+
+when to use/avoid arrays
+------------------------
+
+when to use
+-----------
+
+* Store multiple datas
+* random access- we can access any data with efficient time complexity
+
+when to avoid
+------------
+
+* Same data type elements - we cannot store diffrent type of data
+* Reserve memory - if you declare with some amount of size like 50, 
+                   if your are using 10 only still remaining 40 will be allocated and reserved for this variable
+
+
+Find Number of Days Above Average Temperature
+--------------------------------------------
+
+Example:
+How many day's temperature? 2
+Day 1’s high temp: 1
+Day 2’s high temp: 2
+
+Average = 1.5
+1 day(s) above average
+
+
+public static void averageTemperature() {
+		Scanner scan = new Scanner(System.in); -------------- O(1), O(1)
+		int noOfDays = scan.nextInt();  -------------- O(1), O(1)
+		int[] daysTemperature = new int[noOfDays]; -------------- O(1), O(n)
+		float average = 0; -------------- O(1), O(1)
+		int above = 0; -------------- O(1), O(1)
+
+		System.out.println("How main day's temperature : "); -------------- O(1)
+
+		for (int i = 0; i < noOfDays; i++) { -------------- O(n)
+			System.out.println("Day " + (i + 1) + "'s high temperature ?"); -------------- O(1)
+			daysTemperature[i] = scan.nextInt(); -------------- O(1), O(1) 
+			average += daysTemperature[i]; -------------- O(1), O(1)
+		}
+
+		average = average / noOfDays; -------------- O(1), O(1)
+
+		for (int i = 0; i < noOfDays; i++) { -------------- O(n)
+			if (daysTemperature[i] > average) -------------- O(1)
+				above++; -------------- O(1), O(1)
+		}
+
+		System.out.println("Average = " + average); -------------- O(1)
+		System.out.println(above + " days above average"); -------------- O(1)
+		scan.close(); -------------- O(1)
+	}
+
+time complexity is O(2n) which is simplified as O(n) and space complexity is O(n)

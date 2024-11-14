@@ -74,3 +74,47 @@ list.add(1,2); -------- time complexity will be O(n), because if we insert into 
                         space complexity will be Amortized O(1), because when its reached the capacity of array, its needs to be resize by 1.5 or 2 factor
 
 
+Accessing an arraylist
+----------------------
+
+we can access through get(index) method
+lis.get(1);
+
+time and space complexity will be O(1), O(1)
+
+Traversing an arraylist
+----------------------
+
+we can traverse using forloop, foreach loop, and iterator interface
+
+space and time complexity will be O(1),O(n) for all three
+
+searching in arraylist
+----------------------
+
+we can search through for loop by checking each and every element
+or we can use indexOf method
+int index = list.indexOf("data")
+it will return the index if data is found else it will return -1
+
+time and space complexity will be O(n) and O(1)
+
+Removing in arraylist
+---------------------
+
+we can remove by remove(index) and remove(object)
+In case if we have duplicate objects, it will remove the first occurance of the object
+
+Time and sapce complexity will be O(n) and O(1)
+
+
+Time and space complexity for arrayList
+---------------------------------------
+                                                              Time complexity                   Space Complexity
+Creating an arraylist                                         O(1)                              O(n) - for some version. O(1) for some version like java8  
+inserting a value in arraylist - add(object)                  O(1)                              O(1) - for some version  O(n) for some version like java8
+inserting a value in arraylist - add(index,object)            O(n)                              O(1)
+Traversing in arraylist                                       O(n)                              O(1) 
+accessing in arraylist                                        O(1)                              O(1)
+searching in arraylist                                        O(n)                              O(1)
+deleting in arraylist                                         O(n)                              O(1)

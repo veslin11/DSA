@@ -1,0 +1,76 @@
+ArrayList:
+---------
+
+Arraylist is resizable array comes under collection framework, we can add any no of elements and any type of elements unlike array
+and Arraylist is slower than array, because it need to increase the size while adding the elements
+
+Arraylist in Memory
+-------------------
+
+whenever we create an arraylist, it will create 10 cells with null values- initial capacity varies depends upon java version. IN java 8 initial capacity will be 0
+
+Array will resize into 1.5 or 2 means if we have 10 elements and if we are going to add one more element array will resize into 15 or 20 based on its implementation
+after 11th element remianing elements set as null
+
+If we remove one element array will shif their element to left but size will remian same
+
+if we call the size method it will return actual elements size only 
+
+In some case(version) initial capacity of arraylist is 1 and if we are adding an element size will be 10
+
+In case if we add the elements at the time of intializing 
+ArrayList<String> array = new ArrayList<String>(Arrays.asList("jo","ve","li"));
+IN memory it will create 10 size and 3 values are allocated and remaining values will be null
+
+
+Creation of arraylist
+---------------------
+
+ArrayList<TYPE> arratList = new ArrayList<>();
+
+some version will be allocate 10 memory cells and time complexity will be O(1), space complexity will be O(n)
+some version will be allocate 1 memory cell and time complexity will be O(1), space complexity will be O(1)
+
+
+Insertion in aarraylist
+-----------------------
+
+list.add(). add method is used to insert the elements
+
+add(index,element) -> list.add(1,"data"); we can insert the element at the particular index
+
+**tricky question**
+consider below array with 3 elements 
+-----------------------------------------
+1|2|3|null|null|null|null|null|null|null|
+-----------------------------------------
+
+if we add elements like add(2,4) what will be the output
+
+In 2nd index if data already present, then it will shift the exisitind data into next position and insert the new data into 2nd poistion
+
+-----------------------------------------
+1|2|4|3|null|null|null|null|null|null|
+-----------------------------------------
+
+**tricky question**
+
+consider below array with 4 elements
+
+-----------------------------------------
+1|2|4|3|null|null|null|null|null|null|
+-----------------------------------------
+
+if we add like, add(5,10), it will throw indexoutofboundexeption
+we cannot add more than the size of elements(size and capacity of an array will be different)
+
+
+Time and space complexity
+ArrayList<Integer> list = new ArrayList<>();
+list.add(1); ----------- it will add only 1 element time complexity will be O(1) but sometime, it needs to increase the capacity by 1.5 or 2 factor 
+                         so time and sapce complexity will be Amortized O(1) 
+
+list.add(1,2); -------- time complexity will be O(n), because if we insert into middle, its needs to be shift all subsequest elements
+                        space complexity will be Amortized O(1), because when its reached the capacity of array, its needs to be resize by 1.5 or 2 factor
+
+

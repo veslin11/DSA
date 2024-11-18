@@ -68,3 +68,9 @@ real time example
 
 Operating System Task Scheduling: Similar to round-robin scheduling, a circular doubly linked list can manage tasks or processes, 
 allowing the scheduler to efficiently switch between tasks in both forward and backward directions.
+
+
+Linked List in memory
+---------------------
+
+datas are stored in non contigious manner

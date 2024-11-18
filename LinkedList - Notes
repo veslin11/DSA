@@ -1,0 +1,70 @@
+LinkedList - it is a form of sequential collection and in memory it does not have to be in order. each cell we have 2 nodes, data node and reference node
+-------------------------------
+data | reference of the next node
+-------------------------------
+ and we have head and tail node, head is the starting point of the list, 
+the question is why we need head ans: if we dont know where the linked list starts how we can access
+second question is, why we need tail, if we dont have tail node, we need to traverse each node to insert the data at the last it will take O(n)
+
+
+LinkedList vs array
+------------------
+we can store as a independent object means we can delete the cell if we dont want but in array we cannot delete a cell, we can delete a data alone
+we can increase the size at any time in linkedlist, but in array need to define the size at the time of intialization and we cannot increase it.
+random access - we can access the data efficiently in array by using this index it will take O(1) but in linkedlist we need to iterate each element and it will take O(n)
+
+Type of linkedlist
+------------------
+
+**SinglyLinkedList
+
+Head|001   data1|002    data2|003     data3|004    data4|null
+             001           002           003          004   
+         
+Tail|004
+
+
+**circular linkedlist
+
+Head|001   data1|002    data2|003     data3|004    data4|001
+             001           002           003          004   
+         
+Tail|004
+
+In the last node it will point to the first node
+
+real time example is 
+Game Development: In multiplayer games, circular linked lists can manage the turn order of players. 
+After the last player takes their turn, the game loops back to the first player, ensuring a continuous cycle of turns.
+
+
+**doubly linked list
+
+Head|001   null|data1|002    001|data2|003     002|data3|004    003|data4|null
+                 001              002               003              004   
+         
+Tail|004
+
+here we have 3 blocks, 
+first blocks will be reference of the previous node
+second blocks will be data node
+third blocks will be reference of the next node
+
+Real time example
+music player, we can play through next previous songs
+
+
+** Circular doubly linked list
+
+Head|001   004|data1|002    001|data2|003     002|data3|004    003|data4|001
+                 001              002               003              004   
+         
+Tail|004
+
+in the first node, first block will be reference of last node
+In the last node, last block will be reference of the first node
+
+real time example 
+
+Operating System Task Scheduling: Similar to round-robin scheduling, a circular doubly linked list can manage tasks or processes, 
+allowing the scheduler to efficiently switch between tasks in both forward and backward directions.

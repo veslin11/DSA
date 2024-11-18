@@ -1,0 +1,58 @@
+Calculate time complexity 
+----------------------------
+for(int i=0;i<n; i++) {
+			for(int k= i+1; k<n;k++) {
+				System.out.println();
+			}
+		}
+
+for inner loop it will run like
+first iteration n-1, second one n-2
+(n-1)+(n-2)+(n-3)+....+2+1
+we can calulate lie
+n(n-1)/2 
+n^2/2 - n/2  we can eliminate non dominant terms n/2 and 1/2
+and final result will be n^2.
+
+
+calculate time complexity for below method
+
+public void calc(int[] a, int[] b){
+
+for(int i=0;i<a.length; i++) {
+			for(int k= 0; k<b.length;k++) {
+				System.out.println();
+			}
+		}
+}
+
+time complexity will be O(ab)
+
+
+calculate time complexity for below method
+
+public void calc(int[] a, int[] b){
+
+for(int i=0;i<a.length; i++) {
+			for(int k= 0; k<b.length;k++) {
+            for(int j=0;j<100000;j++) { ----------------------- O(1) because it is constant
+				System.out.println();
+}
+			}
+		}
+}
+
+time complexity will be O(ab)
+
+calculate time complexity for array reverse method
+
+int temp=0;
+		int tot = array.length;
+		for(int i=0;i<tot/2;i++) { ------------------ O(n/2)
+			temp = array[i];
+			array[i] = array[tot-1-i];
+			array[tot-1-i] = temp;
+		}
+		System.out.println(Arrays.toString(array));------- O(n)
+
+time complexity will be O(n)

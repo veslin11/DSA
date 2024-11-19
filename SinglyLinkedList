@@ -46,3 +46,103 @@ time and space complexity will be O(n), O(1)
 Traversal of singly linked list
 -------------------------------
 
+
+public void display() {
+		Node tempNode = head;  ------------------------ O(1),O(1)
+		while (tempNode != null) { ------------------------ O(n)
+			System.out.println(tempNode.data);  ------------------------ O(1),O(1)
+			tempNode = tempNode.next; ------------------------ O(1),O(1)
+		}
+	}
+
+
+time and space complexity will be O(n), O(1)
+
+
+Searching in singly linkedlist
+------------------------------
+
+
+public boolean find(int datavalue) {
+		Node tempNode = head;  ------------------------ O(1),O(1)
+		while (tempNode != null) { ------------------------ O(n),O(1)
+			if (tempNode.data == datavalue) { ------------------------ O(1)
+				System.out.println("found " + datavalue); ------------------------ O(1)
+				return true; ------------------------ O(1)
+			}
+			tempNode = tempNode.next; ------------------------ O(1),O(1)
+		}
+		System.out.println("not found " + datavalue); ------------------------ O(1)
+		return false; ------------------------ O(1)
+	}
+
+
+time and space complexity will be O(n), O(1)
+
+Deletion in singly linked list
+------------------------------
+
+
+public void delete(int dataValue) {
+
+		if (head == null) { ------------------------ O(1)
+			System.out.println("list is empty"); ------------------------ O(1)
+			return;
+		}
+
+		Node deleteNode = findNode(dataValue); ------------------------ O(n),O(1)
+
+		if (deleteNode == null) { ------------------------ O(1)
+			System.out.println("node not found"); ------------------------ O(1)
+			return;
+		}
+
+		if (deleteNode == head) { ------------------------ O(1)
+			head = head.next; ------------------------ O(1),O(1)
+			size--; ------------------------ O(1),O(1)
+			if (size == 0) ------------------------ O(1)
+				tail = null; ------------------------ O(1),O(1)
+		} else {
+			Node nodeBefore = null; ------------------------ O(1),O(1)
+			Node tempNode = head; ------------------------ O(1),O(1)
+			while (tempNode != null) { ------------------------ O(n)
+				if (tempNode.next == deleteNode) { ------------------------ O(1)
+					nodeBefore = tempNode; ------------------------ O(1),O(1)
+					break;
+				}
+				tempNode = tempNode.next; ------------------------ O(1),O(1)
+			}
+			nodeBefore.next = deleteNode.next; ------------------------ O(1),O(1)
+			if (deleteNode == tail) ------------------------ O(1)
+				tail = nodeBefore; ------------------------ O(1),O(1)
+
+			size--; ------------------------ O(1),O(1)
+		}
+
+	}
+
+
+time and space complexity will be O(n), O(1)
+
+Delete entire singly linked List
+---------------------------------
+
+public void deleteEntireLL() {
+		head = tail = null; ------------------------ O(1),O(1)
+		System.out.println("deleted"); 
+	}
+
+
+time and space complexity will be O(1), O(1)
+
+
+Time and space complexity for singly linked list
+------------------------------------------------
+
+Singly Linked List               Time complexity                  Space complexity
+Creation                          O(1)                             O(1) 
+Insertion                         O(n)                             O(1)
+Searching                         O(n)                             O(1)
+Traversing                        O(n)                             O(1)       
+Deletion of a node                O(n)                             O(1)
+Deletion of linked list           O(1)                             O(1)

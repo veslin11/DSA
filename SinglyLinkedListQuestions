@@ -1,0 +1,39 @@
+Singly Linked List - Rotate
+----------------------------
+
+Implement the following on the SinglyLinkedList class:
+
+Rotate
+
+This function should rotate all the nodes in the list by some number passed in. For instance, if your list looks like 1 -> 2 -> 3 -> 4 -> 5 and you rotate by 2, the list should be modified to 3 -> 4 -> 5 -> 1 -> 2. The number passed in  to rotate can be any integer.
+
+Time Complexity : O(N), where N is the length of the list.
+
+Space Complexity : O(1)
+
+public String rotate1(int number) {
+	    int index = number;
+	    if (number < 0) {
+	      index = number + size;
+	    }
+	    if (index < 0 || index >= size) {
+	      return null;
+	    }
+	    if (index == 0) {
+	      return "No Rotation";
+	    }
+	    Node prevNode = head;
+	    for(int i=0; i<index-1; i++) {
+	      prevNode = prevNode.next;  
+	    }
+	    if (prevNode == null) {
+	        return "No Rotation";
+	      }
+	    tail.next = head;
+	    head = prevNode.next;
+	    tail = prevNode;
+	    prevNode.next = null;
+	    return "Success";
+	  }
+
+Time and space complexity will be O(n), O(1)

@@ -1,0 +1,21 @@
+Count the Number of Nodes
+--------------------------
+Add a method to count the number of nodes in the circular singly linked list.
+
+ public int countNodes() {
+        int count = 0;
+        Node temp = this.head;
+        if (temp == null) {
+            return 0;  // Return 0 immediately if the list is empty
+        }
+ 
+        do {
+            count++;  // Increment the count for each node
+            temp = temp.next;  // Move to the next node
+        } while (temp != this.head);  // Continue until the list cycles back to the head
+ 
+        return count;  // Return the total count
+    }
+
+time and space complexity will be O(n), O(1)
+

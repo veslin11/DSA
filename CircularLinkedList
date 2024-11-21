@@ -57,3 +57,108 @@ public void insert(int datavalue, int location) {
 	}
 
 time and space complexity will be O(n) O(1)
+
+
+traverse
+---------
+
+public void traverse() {
+		if (head == null) {
+			System.out.println("list is empty");
+			return;
+		}
+
+		int index = 0;
+		Node tempNode = head;
+		while (index < size) {
+			System.out.println(tempNode.data);
+			tempNode = tempNode.next;
+			index++;
+		}
+	}
+
+time and space complexity will be O(n) O(1)
+
+Searching
+---------
+
+public boolean searching(int nodeValue) {
+		if (head == null) {
+			System.out.println("list is empty");
+			return false;
+		}
+
+		int index = 0;
+		Node tempNode = head;
+		while (index < size) {
+			if (tempNode.data == nodeValue) {
+				System.out.println(nodeValue + " is found in the list");
+				return true;
+			}
+			tempNode = tempNode.next;
+			index++;
+		}
+
+		System.out.println(nodeValue + " is not found in the list");
+		return false;
+	}
+
+time and space complexity will be O(n) O(1)
+
+
+delete
+------
+
+public void delete(int location) {
+		if (head == null) {
+			System.out.println("list is empty");
+			return;
+		}
+		if (location < 0 || location >= size) {
+			System.out.println("invalid location");
+			return;
+		}
+		if (location == 0) {
+
+			if (size == 1) {
+				head.next = null;
+				head = tail = null;
+				return;
+			} else {
+				head = head.next;
+				tail.next = head;
+			}
+		} else {
+			Node previousNode = head;
+			int index = 0;
+			while (index < location - 1) {
+				previousNode = previousNode.next;
+				index++;
+			}
+			Node deleteNode = previousNode.next;
+			previousNode.next = deleteNode.next;
+			if (tail == deleteNode)
+				tail = previousNode;
+		}
+		size--;
+	}
+
+time and space complexity will be O(n) O(1)
+
+
+delete the entire cll
+----------------------
+
+public void deleteEntireCLL() {
+		if (head == null) {
+			System.out.println("list is empty");
+			return;
+		}
+
+		head = null;
+		tail.next = null;
+		tail = null;
+		System.out.println("deleted");
+	}
+
+time and space complexity will be O(1) O(1)

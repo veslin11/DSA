@@ -1,0 +1,59 @@
+Create circular linked list
+---------------------------
+
+public class CircularLinkedList {
+	
+	public Node head;
+	public Node tail;
+	public int size;
+	
+	public Node createCLL(int dataValue) {
+		head = new Node();
+		Node newNode = new Node();
+		newNode.data = dataValue;
+		newNode.next = newNode;
+		head = tail = newNode;
+		size = 1;
+		return head;
+	}
+
+}
+
+time and space complexity will be O(1), O(1)
+
+insert circular linked list
+----------------------------
+
+public void insert(int datavalue, int location) {
+
+		if (head == null) {
+			createCLL(datavalue);
+			return;
+		}
+
+		Node newNode = new Node();
+		newNode.data = datavalue;
+
+		if (location == 0) {
+			newNode.next = head;
+			head = newNode;
+			tail.next = head;
+		} else if (location >= size) {
+			newNode.next = tail.next;
+			tail.next = newNode;
+			tail = newNode;
+		} else {
+			Node currentNode = head;
+			int index = 0;
+			while (index < location - 1) {
+				currentNode = currentNode.next;
+				index++;
+			}
+			newNode.next = currentNode.next;
+			currentNode.next = newNode;
+		}
+		size++;
+
+	}
+
+time and space complexity will be O(n) O(1)

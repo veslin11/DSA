@@ -1,0 +1,58 @@
+Create Doubly linked list
+-------------------------
+
+Head|001         null|data1|null
+                      001
+Tail|001
+
+public Node createDoublyLinkedList(int dataValue) {
+		Node newNode = new Node(dataValue);
+		head = tail = newNode;
+		size = 1;
+		return head;
+	}
+
+time and space complexity will be O(1) and O(1)
+
+Insertion
+--------  
+Head|001         null|data1|002        001|data2|null
+                      001                   002
+Tail|002
+
+public void insert(int dataValue ,int location) {
+		if(location < 0 || location > size) {
+			System.out.println(" invalid location  !!");
+			return;
+		}else if (head == null) {
+			createDoublyLinkedList(dataValue);
+			return;
+		}
+		Node newNode = new Node(dataValue);
+		if(location == 0) {
+			newNode.next = head;
+			head.prev = newNode;
+			head = newNode;
+		} else {
+			int index = 0;
+			Node tempNode = head;
+			while (index < location - 1) {
+				tempNode = tempNode.next;
+				index++;
+			}
+			newNode.prev = tempNode;
+			newNode.next = tempNode.next;
+			tempNode.next = newNode;
+			
+			if (tempNode == tail) {
+				tail = newNode;
+				tail.prev = tempNode;
+				tail.next = null;
+			} else {
+				newNode.next.prev = newNode;
+			}
+
+		}
+
+Time and space complexity will be O(n) and O(1)
+

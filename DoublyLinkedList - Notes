@@ -56,3 +56,38 @@ public void insert(int dataValue ,int location) {
 
 Time and space complexity will be O(n) and O(1)
 
+Traversal
+---------
+
+public void displayFront() {
+		if (head != null) {
+			Node tempNode = head;
+			for (int i = 0; i < size; i++) {
+				System.out.println(tempNode.data);
+				tempNode = tempNode.next;
+			}
+		} else {
+			System.out.println("list is empty");
+		}
+	}
+
+Time and space complexity will be O(n) and O(1)
+
+
+Reverse traversal
+-----------------
+
+public void displayLast() {
+		if (tail != null) {
+			Node tempNode = tail;
+			for (int i = 0; i < size; i++) {
+				System.out.println(tempNode.data);
+				tempNode = tempNode.prev;
+			}
+		} else {
+			System.out.println("list is empty");
+		}
+	}
+
+Time and space complexity will be O(n) and O(1)
+

@@ -1,0 +1,30 @@
+Remove Dups
+------------
+Write a method to remove duplicates from an unsorted linked list.
+
+Example
+
+linkedList = 1->2->1->3
+deleteDups(linkedList)
+//Output
+1->2->3
+
+public void removeDupicate() {
+		Node currentNode = head;
+		Node previousNode = null;
+		HashSet<Integer> dupSet = new HashSet<>();
+		while (currentNode != null) {
+			int currentValue = currentNode.data;
+			if (dupSet.contains(currentValue)) {
+				previousNode.next = currentNode.next;
+				size--;
+
+			} else {
+				dupSet.add(currentValue);
+				previousNode = currentNode;
+			}
+			currentNode = currentNode.next;
+		}
+	}
+
+time and space complexity will be O(n) and O(n)

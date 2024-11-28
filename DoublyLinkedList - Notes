@@ -53,6 +53,8 @@ public void insert(int dataValue ,int location) {
 			}
 
 		}
+size++;
+}	
 
 Time and space complexity will be O(n) and O(1)
 

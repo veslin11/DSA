@@ -57,3 +57,34 @@ public Node nthToLast(LinkedList list,int n){
 
 time and space complexity will be O(n) and O(1)
 
+
+
+Partition
+------------
+Write code to partition a linked list around a value x, 
+such that all nodes less than x come before all nodes greater than or equal to x.
+
+Example
+
+Input: 1 -> 9 -> 5  -> 10 -> 2  [x=4]
+
+Output: 2 -> 1 -> 9 -> 5 -> 10
+
+public void partitionX(int x) {
+			Node tempNode = head;
+			tail = head;
+			while(tempNode != null) {
+				Node next = tempNode.next;
+				if(tempNode.data < x) {
+					tempNode.next = head;
+					head = tempNode;
+				} else {
+					tail.next = tempNode;
+					tail = tempNode;
+				}
+				tempNode = next;
+			}
+			tail.next = null;
+		}
+
+time and space complexity will be O(n) and O(1)

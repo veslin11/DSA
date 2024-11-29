@@ -28,3 +28,32 @@ public void removeDupicate() {
 	}
 
 time and space complexity will be O(n) and O(n)
+
+
+Return Nth to Last
+------------------
+Implement and algorithm to find the nth to last element of a singly linked list.
+
+Example
+
+linkedList = 1->2->3->4-5
+deleteDups(linkedList, 2)
+//Output
+4
+
+
+public Node nthToLast(LinkedList list,int n){
+      if(n > list.size){
+          System.out.println("Invalid N");
+          return null;
+      }
+      Node tempNode = list.head;
+      for(int i =0;i<=list.size-n-1;i++) {
+          tempNode = tempNode.next;
+      }
+      System.out.println(tempNode.value);
+      return tempNode;
+  }
+
+time and space complexity will be O(n) and O(1)
+

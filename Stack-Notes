@@ -18,3 +18,56 @@ is empty - to check if the stack is empty or not
 is full - to check if the stack is full incase of array, 
           isfull method no need to implement in linked list
 delete stack - to delete the entire stack
+
+
+stack creation
+--------------
+
+we can create a stack by two ways arrays amd linked list
+
+arrays
+-----
+
+easy to implement 
+fixed size
+
+linked list
+-----------
+
+dynamic size
+hard to implement 
+
+example with array
+------------------
+
+public class stack{
+public int arr[];
+public int topOfStack;
+
+public stack(int size){
+arr=new int[size];
+topOfStack=-1;
+}
+
+// time and space complexity will be O(1) and O(n)
+
+public boolen isEmpty(){
+if(topOfStack==-1)
+return true;
+else
+return false;
+}
+
+// time and space complexity will be O(1) and O(1)
+
+
+public boolean isFull(){
+if(topOfStack == arr.length()-1)
+return true;
+else
+return false;
+}
+
+// time and space complexity will be O(1) and O(1)
+
+}

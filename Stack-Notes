@@ -1,0 +1,20 @@
+stack
+-----
+
+it is used for last in first out(LIFO)
+
+example : back button in the browser 
+
+some operations like push pop 
+
+stack operations
+----------------
+
+create stack 
+push - insert an element in array or linkelist
+pop - remove the top of the element 
+peek - retrive the top of the element 
+is empty - to check if the stack is empty or not
+is full - to check if the stack is full incase of array, 
+          isfull method no need to implement in linked list
+delete stack - to delete the entire stack

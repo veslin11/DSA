@@ -62,10 +62,51 @@ return false;
 
 
 public boolean isFull(){
-if(topOfStack == arr.length()-1)
+if(arr !=null && topOfStack == arr.length()-1)
 return true;
 else
 return false;
+}
+
+// time and space complexity will be O(1) and O(1)
+
+
+public void push(int value)
+{
+if(isFull){
+sysout("stack is full)
+}
+else {
+arr[++topOfStack] = value;
+}
+}
+
+// time and space complexity will be O(1) and O(1)
+
+public int pop()
+{
+if(isEmpty())
+return -1;
+else{
+return arr[topOfStack--];
+}
+}
+
+// time and space complexity will be O(1) and O(1)
+
+public int peek()
+{
+if(isEmpty())
+return -1;
+else{
+return arr[topOfStack];
+}
+}
+
+// time and space complexity will be O(1) and O(1)
+
+public void deleteStack(){
+arr=null;
 }
 
 // time and space complexity will be O(1) and O(1)

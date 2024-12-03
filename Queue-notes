@@ -1,0 +1,9 @@
+Queue
+
+it is used for FIFI(First in first out)
+
+example 
+printing documents
+food order at the restaurant
+
+we can implement this by array or linked list

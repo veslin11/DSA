@@ -176,3 +176,13 @@ list.head=null;
 // time and space complexity will be O(1) and O(1)
 
 }
+
+
+when to use/avoid stack:
+
+To Use:
+* LIFO functionality - if we want to use LIFO we can use stack
+* Chance of data corruption is mininum  - because data insertions in the middle is not possible only at last we can insert
+
+To Avoid:
+* Random access is not possible

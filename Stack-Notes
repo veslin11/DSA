@@ -112,3 +112,67 @@ arr=null;
 // time and space complexity will be O(1) and O(1)
 
 }
+
+Example with linkedList
+-----------------------
+
+Here we have to use linkedlist that we already worked. by using the linkedlist class
+
+public class stackUsingLinkedList{
+public SinglyLikedList list;
+
+public stackUsingLinkedList(){
+list = new SinglyLikedList();
+}
+
+// time and space complexity will be O(1) and O(n)
+
+public boolen isEmpty(){
+if(list.head == null)
+return true;
+else
+return false;
+}
+
+// time and space complexity will be O(1) and O(1)
+
+public void push(int value)
+{
+alist.insertInLinkedList(value,0);
+}
+In the above case, we have to mention 0 for every insertions
+
+// time and space complexity will be O(1) and O(1)
+
+public int pop()
+{
+int result = -1;
+if(isEmpty())
+sysout("stack is empty");
+else{
+result = list.head.data;
+list.delete(0); //using index
+}
+return result;
+}
+
+// time and space complexity will be O(1) and O(1)
+
+public int peek()
+{
+if(isEmpty())
+return -1;
+else{
+return list.head.data;
+}
+}
+
+// time and space complexity will be O(1) and O(1)
+
+public void deleteStack(){
+list.head=null;
+}
+
+// time and space complexity will be O(1) and O(1)
+
+}

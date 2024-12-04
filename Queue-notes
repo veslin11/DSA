@@ -7,3 +7,24 @@ printing documents
 food order at the restaurant
 
 we can implement this by array or linked list
+
+Implementation:
+--------------
+-> Using Array
+---------------
+-> Array
+-> circular Queue
+
+-> Using linkedlist
+
+
+Queue operations
+----------------
+
+* Create Queue
+* Enqueue - used to insert the element in queue
+* Dequeue - used to remove the element in queue
+* isFull
+* is Empty
+* peek
+* deleteQueue

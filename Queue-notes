@@ -28,3 +28,77 @@ Queue operations
 * is Empty
 * peek
 * deleteQueue
+
+
+Queue using array
+-----------------
+
+public class QueueArray {
+
+	public int[] arr;
+	public int beginningOfQueue;
+	public int topOfQueue;
+
+	// Queue creation - Time and space complexity will be O(1) and O(n)
+	public QueueArray(int size) {
+		arr = new int[size];
+		beginningOfQueue = topOfQueue = -1;
+	}
+
+	// Queue isFull - Time and space complexity will be O(1) and O(1)
+	public boolean isFull() {
+		if (topOfQueue == arr.length - 1)
+			return true;
+		else
+			return false;
+	}
+
+	// Queue isEmpty - Time and space complexity will be O(1) and O(1)
+	public boolean isEmpty() {
+		if (beginningOfQueue == -1 || beginningOfQueue == arr.length)
+			return true;
+		else
+			return false;
+	}
+
+	// Queue enQueue  - Time and space complexity will be O(1) and O(1)
+	public void enQueue(int value) {
+		if (isFull()) {
+			System.out.println("Queue is full");
+			return;
+		} else if (isEmpty()) {
+			beginningOfQueue = 0;
+		}
+		arr[++topOfQueue] = value;
+		System.out.println("Successfully inserted !!");
+	}
+
+	// Queue deQueue - Time and space complexity will be O(1) and O(1)
+	public void deQueue() {
+		if (isEmpty()) {
+			System.out.println("Queue is empty!!");
+		} else {
+			arr[beginningOfQueue++] = Integer.MIN_VALUE;
+			if (beginningOfQueue > topOfQueue)
+				beginningOfQueue = topOfQueue = -1;
+		}
+	}
+	
+	//Queue peek - Time and space complexity will be O(1) and O(1)
+	public int peek() {
+		if(isEmpty()) {
+			System.out.println("Queue is Empty");
+			return -1;
+		} else {
+			return arr[beginningOfQueue];
+		}
+	}
+	
+	//Qeueue delete - Time and space complexity will be O(1) and O(1)
+	public void deleteQueue() {
+		arr = null;
+		System.out.println("Queue deleted");
+	}
+
+}
+

@@ -1,0 +1,88 @@
+why we need circular queue:
+--------------------------
+
+when we call deQueue method it cause blank cells and we are not able to use that cell
+
+so to rectify this we can solve this by two ways
+
+-> by shifting the cell by each deQueue operations - but it cause time complexity will be O(n)
+-> circular Queue
+
+package com.dsa.linkedlist;
+
+public class CircularQueue {
+
+	public int[] arr;
+	public int beginningOfQueue;
+	public int topOfQueue;
+
+	// create CQ - Time and space complexity will be O(1) and O(n)
+	public CircularQueue(int size) {
+		arr = new int[size];
+		beginningOfQueue = topOfQueue = -1;
+	}
+
+	// isEmpty - Time and space complexity will be O(1) and O(1)
+	public boolean isEmpty() {
+		if (topOfQueue == -1)
+			return true;
+		else
+			return false;
+	}
+
+	// isFull - Time and space complexity will be O(1) and O(1)
+	public boolean isFull() {
+		if ((topOfQueue + 1 == arr.length && beginningOfQueue == 0) || (topOfQueue + 1 == beginningOfQueue))
+			return true;
+		else
+			return false;
+
+	}
+
+	// enQueue - Time and space complexity will be O(1) and O(1)
+	public void enQueue(int value) {
+		if (isFull()) {
+			System.out.println("CQ is full");
+			return;
+		} else if (isEmpty()) {
+			beginningOfQueue = 0;
+		} else {
+			if (topOfQueue + 1 == arr.length)
+				topOfQueue = 0;
+		}
+		arr[++topOfQueue] = value;
+	}
+
+	// deQueue - Time and space complexity will be O(1) and O(1)
+	public void deQueue() {
+		if (isEmpty()) {
+			System.out.println("CQ is empty");
+		} else {
+			arr[beginningOfQueue] = Integer.MIN_VALUE;
+			if (beginningOfQueue == topOfQueue) {
+				topOfQueue = beginningOfQueue = -1;
+			} else if (beginningOfQueue + 1 == arr.length) {
+				beginningOfQueue = 0;
+			} else {
+				beginningOfQueue++;
+			}
+		}
+	}
+
+	// Queue peek - Time and space complexity will be O(1) and O(1)
+	public int peek() {
+		if (isEmpty()) {
+			System.out.println("Queue is Empty");
+			return -1;
+		} else {
+			return arr[beginningOfQueue];
+		}
+	}
+
+	// Qeueue delete - Time and space complexity will be O(1) and O(1)
+	public void deleteQueue() {
+		arr = null;
+		System.out.println("Queue deleted");
+	}
+
+}

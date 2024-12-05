@@ -102,3 +102,53 @@ public class QueueArray {
 
 }
 
+
+Queue using linkedlist
+----------------------
+----------------------
+
+package com.dsa.linkedlist;
+
+public class QueueLL {
+
+	public SinglyLinkedList list;
+
+	public QueueLL() {
+		list = new SinglyLinkedList();
+	}
+
+	public boolean isEmpty() {
+		if (list.head == null)
+			return true;
+		else
+			return false;
+	}
+	
+	public void enQueue(int value) {
+		list.insertInLinkedList(value, list.size);
+	}
+	
+	public void deQueue() {
+		if(isEmpty()) {
+			System.out.println("queue is empty");
+			return;
+		} else {
+			list.delete(list.head.data);
+		}
+	}
+	
+	public int peek() {
+		if(isEmpty()) {
+			System.out.println("queue is empty");
+			return -1;
+		} else {
+			return list.head.data;
+		}
+	}
+	
+	public void deleteQueue() {
+		list.deleteEntireLL();
+	}
+}
+
+Time and space complexity will be O(1) and O(1) for all methods

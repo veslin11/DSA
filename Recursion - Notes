@@ -1,0 +1,58 @@
+Recursion - is a way of solving problems by have a function calling itself
+
+Properties:
+----------
+
+* Performing same operations multiple times by using different inputs
+* In every step receiving smaller inputs to make the problem smaller
+* Base condition needed to stop the recursion, else it will leads to infinite loop
+
+example
+
+public void recursion(int n) {
+if(n==1){
+  sysout("recursion stopped")
+  } else {
+  recursion(n-1);
+  }
+  }
+
+why we need recursion
+--------------------
+
+Recursive thinking is important to solve similar sub problems
+Recursion is used to solve similar sub problems of the main prob
+when to choose -> if you can divide the problems to sub problems with same functionality
+Prominent usage of recursion in data structure, Trees and graphs
+It is used in many alogorithm(divide and conquire, greedy algorthim, dynamic programming)
+
+Logic Behind the Recursion
+--------------------------
+
+Two main condition: 1. Exit condition, 2. Recursive calling
+
+Recursion is using the stack memory to store the recursive calling
+
+example:
+
+public void recursiveN(int n) {
+		if(n<=0) {
+			System.out.println("recursion completed");
+		} else {
+			recursiceN(n-1);
+			System.out.println("n is: "+n);
+		}
+	}
+
+if recursiveN(4), recursive calls will be stored like below stack memory
+
+|               |   
+| recursiveN(1) |
+| recursiveN(2) |
+| recursiveN(3) |
+| recursiveN(4) |
+|_______________|
+Stack Memory
+
+and the print statement printing like 1 2 3 4
+

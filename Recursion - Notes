@@ -87,3 +87,79 @@ Points                                  Recursive                             It
 Space efficient ?                          No(stack memory is needed)             Yes
 Time efficient ?                           No(time consumes for push and pop)     Yes
 easy to code ?                             Yes                                    No
+
+
+Wnen to use/avoid recursion:
+----------------------------
+
+To use
+* when we can easily breakdown the problems into similary sub problems
+* when we are fine with extra overhead(both time and space complexity)
+* when we need a quick working solution instead of efficient one
+* when we traverse a tree
+* when we use memoziation in recursion
+
+To Avoid
+* If time and space complexity is matter for us
+* recursion can be slow
+
+
+write recursion in three steps
+------------------------------
+
+1. to find recursion case
+ for factorial of no, recursive case will be n*(n-1)
+
+2. Base case - need to find the condition which stops the recusrion
+3 unintentional case - need to validate the input if input is not a valid
+  - what if the input is negative no
+
+public int factorial(int n) {
+		if (n < 0)
+			return -1;
+		if (n == 0 || n == 1)
+			return 1;
+		return n * factorial(n - 1);
+	}
+
+Explanation:           24   
+                  ______________
+                 |              |            6
+factorial(4) ->  4 * factorial(3)     ______________
+                      |              |              |
+		      |______________3 * factorial(2)           2
+                                                            ______________
+                                            |              |              |
+ 		                            |______________2 * factorial(1)            
+
+
+time and space complexity will be O(1) and O(n)
+
+Fibonacci series:
+-----------------
+
+0 1 1 2 3 5 8 13 21 34 55 ...............
+
+f(n) = f(n-1) + f(n-2)
+
+if f=5 = f(n-1) -> 3 + f(n-2) -> 2
+
+0        1         1            2         3            5             8          13              21           34             55
+                              f(n-2)    f(n-1)        
+
+
+public int fibonacci(int n) {
+		if(n<0)
+			return -1;
+		if(n==0 || n==1)
+			return n;
+		return fibonacci(n-1) + fibonacci(n-2);
+	}
+                                                         3
+Explnation:                      _________________________________________________________
+                                |    2                                                     |
+fibonacci(3) ---->               fibonacci(2)                      +                  fibonacci(1)
+                                      |                                               |__________|     
+				      |_____ fibonacci(1) + fibonacci(0)                    1 
+                                             |__________|   |___________|
+				      	         1                1

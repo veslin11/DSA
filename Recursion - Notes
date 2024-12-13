@@ -163,3 +163,14 @@ fibonacci(3) ---->               fibonacci(2)                      +            
 				      |_____ fibonacci(1) + fibonacci(0)                    1 
                                              |__________|   |___________|
 				      	         1                1
+
+
+How to measure recursive functions:
+----------------------------------
+
+recursive method with multiple calls like fibonacci
+
+time complexity will be O(branches^depth) here branches will be how many calls present in the menthod like fibonacci there will be 2 calls
+and depth will be intial input of the method lets say fibonacci(4) then depth will bbe 4
+
+here time complexity will be O(2^4)

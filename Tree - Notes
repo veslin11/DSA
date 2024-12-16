@@ -36,3 +36,47 @@ Binary tree
 
 Binary tree is a data structure in whcih each node has at most 2 childrens 
 Binary tree is a family of data structures(BST, AVL Tree, Heap tree, red-black tree, syntax tree)
+
+
+Type of binary tree
+===================
+
+-> Full Binary Tree -  Each node should contain zero or two child
+ Example:
+    root
+      Parent1
+        child1
+          subchild1
+          subchild2
+        child2
+      Parent2 
+
+-> perfect binary tree - All node should contain 2 childrens except leaf node and tree should be balanced and same depth
+ example: 
+   root
+     Parent1
+        child1
+        child2
+     Parent2
+        child1
+        child2
+
+-> Complete binary tree - All levels should be filed execept last level and last level should be keep left
+ example:
+                                          N1
+                                         /  \
+                                        N2    N3
+                                       / \    / \
+                                      N4  N5 N6  N7
+                                    /  \
+                                   N8  N9
+  N8 and N9 should be keep left as possible, if both n8 and n9 are connected to n5 then this case should not be complete binary tree
+
+-> Balanced binary tree - All leaf node should locate at the same distance of the root node
+ Example:
+                                         N1
+                                        /  \
+                                       N2   N3
+                                      / \     \
+                                     N4  N5    N6
+ here all leaf node should have same distance to the same node

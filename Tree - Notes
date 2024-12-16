@@ -112,4 +112,28 @@ root node insert at 1th position
 p1 node insert like cell[2 * 1(parent node of p1)] = 2
                     cell[2 * 1(parent node of p2) + 1] = 3
 
-like this
+like this.....
+
+
+Creation of Binary tree:
+=======================
+
+public class BinaryTree {
+
+	public String value;
+	public BinaryTree right;
+	public BinaryTree left;
+	public int height;
+
+}
+
+Binary Tree traversal
+=====================
+
+-> Depth firdt search
+   * post order traversal
+   * preorder traversal
+   * in order traversal
+
+-> Breadth firt search
+   * level order traversal

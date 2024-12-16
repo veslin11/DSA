@@ -1,0 +1,38 @@
+Tree:
+-----
+
+Tree is a non linear data structure and it is represented as a hirerical format
+
+Properties
+---------
+* Represent hirerical format
+* each node has two parts - data and link to next node
+* Base catogories and sub catogories under it 
+
+why we need tree:
+----------------
+
+* Quicker and easier access
+* Store hirerical data format like folder structure, xml/html structure, organizing data
+* many different type of data structures which perform better in various situations
+     -> BInary tree, AVL tree, Red black tree, Trie
+
+
+Tree Terminology
+---------------
+
+* Root - top node without parent
+* Edge - link between parent and child node
+* leaf - a node with no childerns
+* sibilings - childrens of same parents
+* anchestors - parents, grandparents, great grand parents
+* depth of node - length of path from root to node
+* height of node - length of path from node to deepest node
+* depth of tree - depth of root node, it will be 0
+* height of tree - height of root node - length of root from root to deepest not
+
+Binary tree
+===========
+
+Binary tree is a data structure in whcih each node has at most 2 childrens 
+Binary tree is a family of data structures(BST, AVL Tree, Heap tree, red-black tree, syntax tree)

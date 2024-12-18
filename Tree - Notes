@@ -137,3 +137,26 @@ Binary Tree traversal
 
 -> Breadth firt search
    * level order traversal
+
+
+Preorder traversal
+==================
+
+it will traverse through rootnode -> left subtree -> right subtree
+
+binary tree example image will be there in BinaryTree-Images file
+
+//preOrder traversal
+	
+	public void preOrderTraversal(BinaryTree node) {
+		if(node == null) {
+			return;
+		}
+		
+		System.out.print(node.value+ " -> ");
+		
+		preOrderTraversal(node.left); -------------------------- O(N/2), O(N)
+		preOrderTraversal(node.right); -------------------------- O(N/2), O(N)
+	}
+
+tima and space complexiy will be O(n) and O(n)

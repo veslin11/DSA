@@ -163,7 +163,7 @@ tima and space complexiy will be O(n) and O(n)
 
 
 In order tree traversal
------------------------
+=======================
 
 it will traverse through left subtree -> root node -> right subtree
 
@@ -175,6 +175,24 @@ public void inOrderTraversal(BinaryTree node) {
 		inOrderTraversal(node.left); -------------------------- O(N/2), O(N)
 		System.out.print(node.value + " -> ");
 		inOrderTraversal(node.right); -------------------------- O(N/2), O(N)
+	}
+
+time and space complexiy will be O(n) and O(n)
+
+
+Post order traversal
+====================
+
+it will traverse through Left subtree -> right subtree -> root node
+
+public void postOrderTraversal(BinaryTree node) {
+		if(node == null) {
+			return;
+		}
+		
+		postOrderTraversal(node.left);
+		postOrderTraversal(node.right);
+		System.out.print(node.value + " -> ");
 	}
 
 time and space complexiy will be O(n) and O(n)

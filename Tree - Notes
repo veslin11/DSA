@@ -144,7 +144,7 @@ Preorder traversal
 
 it will traverse through rootnode -> left subtree -> right subtree
 
-binary tree example image will be there in BinaryTree-Images file
+*************************binary tree example image will be there in BinaryTree-Images file*****************************
 
 //preOrder traversal
 	
@@ -160,3 +160,21 @@ binary tree example image will be there in BinaryTree-Images file
 	}
 
 tima and space complexiy will be O(n) and O(n)
+
+
+In order tree traversal
+-----------------------
+
+it will traverse through left subtree -> root node -> right subtree
+
+public void inOrderTraversal(BinaryTree node) {
+		if(node == null) {
+			return;
+		}
+		
+		inOrderTraversal(node.left); -------------------------- O(N/2), O(N)
+		System.out.print(node.value + " -> ");
+		inOrderTraversal(node.right); -------------------------- O(N/2), O(N)
+	}
+
+time and space complexiy will be O(n) and O(n)

@@ -1,0 +1,88 @@
+package com.test.recursion;
+
+public class Recursion {
+	
+	public static void main(String[] args) {
+		Recursion rec = new Recursion();
+		System.out.println("Converting Decimal to binary "+rec.decimalToBinary(13) );
+		System.out.println("power of 2: "+ rec.powerOfTwo(2,3));
+		//rec.powerOfTwoIterative(4);
+		
+		System.out.println("GCD :" + rec.findGCD(48, 18));
+		
+		System.out.println("Factorial of 4 is :" + rec.factorial(4));
+		
+		System.out.println("% is" + (0%10));
+		
+		System.out.println("Sum of digits -> " + rec.sumOfDigits(123));
+	}
+	
+	public int decimalToBinary(int n) {
+		if(n ==0)
+			return 0;
+		return n%2 + 10*decimalToBinary(n/2);
+	}
+	
+	public int findGCD(int a, int b) {
+		if(a < 0 || b < 0) {
+			return -1;
+		}
+		if(b == 0)
+			return a;
+		return findGCD(b, a%b);
+	}
+
+	public void recursiceN(int n) {
+		if (n <= 0) {
+			System.out.println("recursion completed");
+		} else {
+			recursiceN(n - 1);
+			System.out.println("n is: " + n);
+		}
+	}
+
+	public int powerOfTwo(int x, int n) {
+		if (n == 0) {
+			System.out.println("");
+			return 1;
+		} else {
+			int powerOfTwo = x * powerOfTwo(x, n - 1);
+			return powerOfTwo;
+		}
+	}
+	
+	public void powerOfTwoIterative(int n) {
+		int i=0;
+		int power = 1;
+		while(i!=n) {
+			power = power * 2;
+			i++;
+		}
+		System.out.println("power of 2: "+ power);
+	}
+	
+	public int factorial(int n) {
+		if (n < 0)
+			return -1;
+		if (n == 0 || n == 1)
+			return 1;
+		return n * factorial(n - 1);
+	}
+
+	public int fibonacci(int n) {
+		if(n<0)
+			return -1;
+		if(n==0 || n==1)
+			return n;
+		return fibonacci(n-1) + fibonacci(n-2);
+	}
+	
+	// to find sum of digits if digits = 123 result will be 6
+	
+	public int sumOfDigits(int n) {
+		if(n < 0 || n == 0) {
+			return 0;
+		} 
+		return n%10 + sumOfDigits(n/10);
+	}
+}
